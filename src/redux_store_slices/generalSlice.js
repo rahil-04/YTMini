@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const generalSlice = createSlice({
     name: "general",
     initialState:{
-        isMenuOpen: true
+        isMenuOpen: true,
+        showSuggestion: false
     },
     reducers:{
         toggleMenu: (state)=>{
@@ -11,9 +12,15 @@ const generalSlice = createSlice({
         },
         closeMenu: (state)=>{
             state.isMenuOpen = false; 
+        },
+        closeSuggestion: (state)=>{
+            state.showSuggestion = false;
+        },
+        openSuggestion: (state)=>{
+            state.showSuggestion = true;
         }
     }
 })
 
-export const {toggleMenu,closeMenu} = generalSlice.actions;
+export const {toggleMenu,closeMenu,closeSuggestion,openSuggestion} = generalSlice.actions;
 export default generalSlice.reducer;

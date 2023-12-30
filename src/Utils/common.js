@@ -8,4 +8,4 @@ export const YT_VIDEO_API = `https://youtube.googleapis.com/youtube/v3/videos?pa
 
 export const YT_VIDEO_DETAIL_API = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=[ID]&key=${API_KEY}`;
 
-
+export const YT_SEARCH_SUGGESTION_API = `https://suggestqueries.google.com/complete/search?client=chrome&ds=yt&q=`;
