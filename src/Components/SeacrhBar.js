@@ -8,7 +8,6 @@ const SearchBar = ({searchText}) =>{
     const showSuggestion = useSelector((state)=>state.general.showSuggestion)
     const suggestionCache = useSelector((state)=>state.searchCache)
     const dispatch = useDispatch()
-    console.log(suggestionList)
 
     useEffect(()=>{
         const timer = setTimeout(()=> {

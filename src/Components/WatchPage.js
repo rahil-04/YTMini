@@ -5,15 +5,16 @@ import { useEffect, useState } from "react";
 import { YT_VIDEO_DETAIL_API } from "../Utils/common";
 import Skeleton from "./Skeleton";
 import Comments from "./Comments";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
     
     const [videoDetail,SetVideoDetail] = useState([]);
     const dispatch = useDispatch()
-    dispatch(closeMenu())
 
     useEffect(()=>{
         videoDetails()
+        dispatch(closeMenu())
     },[])
 
     const [searchParams] = useSearchParams();
@@ -30,20 +31,25 @@ const WatchPage = () => {
     
     
     return(
-        <div>
-            <div>
-                <iframe 
-                    width="560" 
-                    height="315" 
-                    src={"https://www.youtube.com/embed/"+searchParams.get("v")} 
-                    title="YouTube video player"
-                />
+        <div className="flex flex-col w-full">
+            <div className="w-full">
+                <div className="flex gap-2 w-full">
+                    <iframe 
+                        width="1200" 
+                        height="315" 
+                        src={"https://www.youtube.com/embed/"+searchParams.get("v")} 
+                        title="YouTube video player"
+                    />
+                    <div className="w-full">
+                        <LiveChat/>
+                    </div>
+                </div>
                 <div>
                     <h1 className="p-2 font-bold">{videoDetail[0].snippet.title}</h1>
                     <h1 className="p-2 font-light">{videoDetail[0].snippet.channelTitle}</h1>
                 </div>
             </div>
-            <div className="p-2">
+            <div className="p-2 w-full">
                 <Comments/>
             </div>
         </div>
