@@ -7,7 +7,6 @@ const VideoCard = ({info}) => {
 
     const getVideoDuration = ()=>{
         const durationString = contentDetails.duration;
-        //console.log(typeof(durationString))
         const regex = /PT(?:(\d+)M)?(?:(\d+)S)?/;
         const match = durationString.match(regex);
         if(match){
@@ -15,6 +14,17 @@ const VideoCard = ({info}) => {
             const sec = parseInt(match[2])||0;
             return(`${min}:${sec}`)
         }
+    }
+
+    const formatViews = (views) => {
+        if(views<1000)
+            return views;
+        else if(views<1000000)
+            return parseInt(views/1000) + "K"
+        else if(views<1000000000)
+            return parseInt(views/1000000) + "M"
+        else
+            return parseInt(views/1000000000) + "B"
     }
 
     return (
@@ -26,7 +36,7 @@ const VideoCard = ({info}) => {
             <ul>
                 <li className='font-bold'>{title}</li>
                 <li className='font-light'>{channelTitle}</li>
-                <li className='font-light'>{viewCount} Views • Streamed 1h ago</li>
+                <li className='font-light'>{formatViews(viewCount)} Views • Streamed 1h ago</li>
             </ul>
         </div>
   )

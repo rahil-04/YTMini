@@ -40,7 +40,7 @@ let static_comment_data = [
         replies: [
           {
             id: "1a",
-            author: "Rajneesh",
+            author: "Rahil",
             comment: "Thank You, my friend",
             replies: [],
           },
@@ -57,7 +57,7 @@ let static_comment_data = [
               },
               {
                 id: "1b2",
-                author: "Rajneesh",
+                author: "Rahil",
                 comment: "Haha, loving this banter",
                 replies: [],
               },
