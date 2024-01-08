@@ -4,6 +4,7 @@ import videoListSLiceReducer from "./videoListSLice";
 import searchCacheSliceReducer from "./searchCacheSlice";
 import liveChatSliceReducer from "./liveChatSlice";
 import searchListReducer from "./searchListSlice";
+import historySliceReducer from "./historySlice";
 
 const appStore = configureStore({
     reducer:{
@@ -11,7 +12,8 @@ const appStore = configureStore({
         videoList:videoListSLiceReducer,
         searchCache:searchCacheSliceReducer,
         liveChat:liveChatSliceReducer,
-        searchList: searchListReducer
+        searchList: searchListReducer,
+        history: historySliceReducer
     }
 });
 

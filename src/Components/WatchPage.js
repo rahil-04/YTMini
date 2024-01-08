@@ -1,6 +1,7 @@
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { useSearchParams } from "react-router-dom"
 import { closeMenu } from "../redux_store_slices/generalSlice";
+import { setVideo } from "../redux_store_slices/historySlice";
 import { useEffect, useState } from "react";
 import { YT_VIDEO_DETAIL_API } from "../Utils/common";
 import Skeleton from "./Skeleton";
@@ -11,14 +12,19 @@ const WatchPage = () => {
     
     const [videoDetail,SetVideoDetail] = useState([]);
     const dispatch = useDispatch()
+    const historyVideo = useSelector((state)=>state.history.videos)
 
     useEffect(()=>{
         videoDetails()
         dispatch(closeMenu())
+        dispatch(setVideo(searchParams.get('v')))
     },[])
 
     const [searchParams] = useSearchParams();
     const YT_VID = YT_VIDEO_DETAIL_API.replace("[ID]",searchParams.get("v"));
+    //console.log(historyVideo);
+    ///console.log("dfgh");
+    
 
     const videoDetails = async() => {
         const response = await fetch(YT_VID);

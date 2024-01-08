@@ -8,6 +8,7 @@ const searchList = createSlice({
     reducers:{
         setVideo:(state,action)=>{
             state.videos = action.payload;
+            return state;
         }
     }
 })

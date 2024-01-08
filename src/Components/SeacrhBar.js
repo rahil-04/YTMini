@@ -50,6 +50,7 @@ const SearchBar = () =>{
             <div>
                 <input 
                     className=" p-2 mt-2 col- border border-black rounded-l-xl" 
+                    placeholder="Search"
                     type="text"
                     value={searchQuerry}
                     onChange={(e)=>SetSearchQuerry(e.target.value)}
@@ -65,7 +66,7 @@ const SearchBar = () =>{
                         ()=>{
                             dispatch(closeSuggestion());
                             getSearchResult();
-                            console.log("clicked")
+                            //console.log("clicked")
                         }
                     }
                 >
