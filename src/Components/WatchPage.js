@@ -37,7 +37,7 @@ const WatchPage = () => {
     
     
     return(
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full mt-[80px] mx-8">
             <div className="w-full">
                 <div className="flex gap-2 w-full">
                     <iframe 

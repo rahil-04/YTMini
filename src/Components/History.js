@@ -27,7 +27,7 @@ const History = () => {
         return SearchResSkeleton
 
     return(
-        <div className="w-full">
+        <div className="mt-[80px]">
             {historyVid.map((vid)=>
                 <Link key={vid} to={`/watch?v=${vid.id}`}><HistoryVid videoID={vid}/></Link>
             )}

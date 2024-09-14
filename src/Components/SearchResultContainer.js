@@ -20,7 +20,7 @@ const SearchResultContainer = ()=>{
         return <SearchResSkeleton/>
 
     return(
-        <div>
+        <div className="mx-[25%] my-0 mt-[80px]">
             {searchResVid.map(
                 (vid)=><Link to={`/watch?v=${vid.id.videoId}`} key={vid.id.videoId||vid.id.channelId}>{vid.id.kind === "youtube#channel"?<SearchResVideo video={vid} style="rounded-full h-[136px] w-[136px]"/>:<SearchResVideo video={vid} style="w-full rounded-xl"/>}</Link> 
             )}

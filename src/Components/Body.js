@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 
 const Body = () => {
     return (
-    <div className="flex justify-normal p-4">
+    <div className="flex justify-normal w-full">
         <SideBar/>
         <Outlet/>
     </div>

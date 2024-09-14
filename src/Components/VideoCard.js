@@ -28,7 +28,7 @@ const VideoCard = ({info}) => {
     }
 
     return (
-        <div className='p-2 m-2 w-72 rounded-lg'>
+        <div className='p-2 m- w-72 rounded-lg'>
             <div className='relative'>
             <span className='absolute bottom-1 right-0 text-white bg-slate-800 px-1 rounded-md'>{getVideoDuration()}</span>
             <img className='rounded-xl' src={thumbnails.medium.url} alt='thumbnail'/>

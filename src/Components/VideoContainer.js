@@ -25,8 +25,13 @@ const VideoContainer = ()=>{
         return <Skeleton/>
 
     return(
-        <div className="flex flex-wrap">
-            {videoData.map((video)=><Link key={video.id} to={`/watch?v=${video.id}`}><VideoCard info={video}/></Link>)}
+        <div className="flex flex-wrap grow justify-start">
+            {videoData.map((video)=>(
+                <div key={video.id}>
+                    <Link to={`/watch?v=${video.id}`}>
+                        <VideoCard info={video}/>
+                    </Link>
+                </div>))}
         </div>
     )
 }
